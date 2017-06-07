@@ -480,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				E5C857301EE1BAF500BE3888 /* LifeBloo */,
+				E5C8579C1EE1BB6F00BE3888 /* LiveView */,
 				E5C857571EE1BB0900BE3888 /* LifeModel */,
 				E5C8577A1EE1BB5800BE3888 /* LifeViewModel */,
 				E5C857B81EE1BBA900BE3888 /* Tests */,
@@ -541,7 +542,6 @@
 				E5E5ECF01EE2720500F3EDE1 /* NetworkError.swift */,
 				E5E5ECF71EE3056D00F3EDE1 /* MovieCalling.swift */,
 				E5E5ECF91EE3058200F3EDE1 /* MovieCalls.swift */,
-				E5C8579C1EE1BB6F00BE3888 /* LiveView */,
 			);
 			path = LifeModel;
 			sourceTree = "<group>";
@@ -595,8 +595,7 @@
 				E55AB9801EE62F8800A1B8C4 /* MovieViewController.swift */,
 				E5C8579E1EE1BB6F00BE3888 /* Info.plist */,
 			);
-			name = LiveView;
-			path = ../LiveView;
+			path = LiveView;
 			sourceTree = "<group>";
 		};
 		E5C857A91EE1BB6F00BE3888 /* LiveViewTests */ = {
