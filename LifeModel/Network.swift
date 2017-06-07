@@ -6,7 +6,7 @@
 //  Copyright © 2017 Daniel Karsh. All rights reserved.
 //
 
-import ReactiveCocoa
+
 import ReactiveSwift
 import Alamofire
 

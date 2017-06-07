@@ -8,7 +8,7 @@
 
 import Quick
 import Nimble
-import ReactiveCocoa
+
 import ReactiveSwift
 @testable import LifeModel
 @testable import LifeViewModel
