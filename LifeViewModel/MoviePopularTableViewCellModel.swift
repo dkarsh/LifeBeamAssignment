@@ -23,14 +23,14 @@ public final class MoviePopularTableViewCellModel:NSObject, MoviePopularTableVie
     internal init(movie: MovieModel, network: Networking, genresKeys:GenresKeys?) {
         
         id = movie.id
-        title = movie.title 
+        title = movie.title ?? ""
         genres =  { () -> String in
-            guard let genresKeys = genresKeys else {
+            guard let genresKeys = genresKeys, let genre_ids = movie.genre_ids else {
                 return ""
             }
-           return movie.genre_ids.filter{genresKeys[Int($0)] != nil}.map{genresKeys[Int($0)]!}.joined(separator: ", ")
+           return genre_ids.filter{genresKeys[Int($0)] != nil}.map{genresKeys[Int($0)]!}.joined(separator: ", ")
         }()
-        previewURL =  movie.poster_path
+        previewURL =  movie.poster_path ?? ""
         self.network = network
         super.init()
     }

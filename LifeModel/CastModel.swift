@@ -10,10 +10,10 @@ import Himotoki
 
 public struct  CastModel {
     
-    public let cast_id: Int
+    public let cast_id: Int?
     public let character:String?
     public let id:UInt64
-    public let name:String
+    public let name:String?
 }
 
 extension CastModel: Decodable {

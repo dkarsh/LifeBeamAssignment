@@ -61,7 +61,7 @@ extension MovieViewModel: MovieViewModelModifiable {
         _image.value = nil
         
         if let movieModel = movieModel {
-            _image <~ network.requestBackImage(url: movieModel.backdrop_path ?? movieModel.poster_path)
+            _image <~ network.requestBackImage(url: movieModel.backdrop_path ?? "")
                 .take(until: stop.producer.skip(first: 1))
                 .map { $0 as UIImage? }
                 .flatMapError { _ in SignalProducer<UIImage?, NoError>(value: nil) }
@@ -69,7 +69,7 @@ extension MovieViewModel: MovieViewModelModifiable {
             
             _cast <~ movieCalls.callCredit(movieID:String(movieModel.id))
                 .take(until: stop.producer.skip(first: 1))
-                .map { $0.cast.map{$0.name}.joined(separator: ", ")}
+                .map { $0.cast.filter{$0.name != nil}.map{$0.name!}.joined(separator: ", ")}
                 .flatMapError { _ in SignalProducer<String?, NoError>(value: nil) }
                 .observe(on: UIScheduler())
         }
